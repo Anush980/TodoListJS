@@ -1,0 +1,94 @@
+.container-wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    
+}
+.container{
+    padding:20px;
+    border-radius: 10px;;
+    border:1px solid black;
+   height: fit-content;
+    min-width: 400px;
+    max-width: 600px;
+    background-color: aliceblue;
+    box-shadow: 0 3px 7px 4px rgba(0, 0, 0, 0.322);
+
+}
+.header{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.content{
+    font-size: 1.3rem;
+   font-weight: 500;
+}
+.content-header{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+    margin-top: 20px;
+
+}
+.content-header .inputTodo{
+    border-radius: 10px;
+    width: 250px;
+    border:1px solid black;
+    height:30px;
+    font-size: 1.1rem;
+
+}
+li{
+    max-width: 100%;
+    word-wrap: break-word;
+ padding-block: 5px;
+
+}
+
+
+ .btn{
+    margin-inline:2px;
+ font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border:none;
+    padding:6px;
+    color:white;
+    background-color: rgb(62, 62, 62);
+     transition: all 0.3 ease;
+}
+
+.content .addBtn{
+    background-color: rgb(16, 94, 142);
+}
+
+.content .addBtn:hover{
+background-color: rgb(13, 78, 118);
+transform: scale(1.03);
+}
+
+.content .doneBtn{
+     background-color: rgb(22, 142, 16);
+}
+
+.content .doneBtn:hover{
+  background-color: rgb(18, 117, 13);
+transform: scale(1.03);
+}
+
+.content .delBtn{
+    background-color: rgb(142, 37, 16);
+}
+
+.content .delBtn:hover{
+background-color: rgb(118, 13, 13);
+transform: scale(1.03);
+}
+
+.done{
+    text-decoration: line-through;
+    color:rgba(56, 57, 57, 0.867)
+}
