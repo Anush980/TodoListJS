@@ -15,7 +15,6 @@ body{
     border:1px solid black;
     min-height: 350px;
    height: fit-content;
-    min-width: 400px;
     max-width: 600px;
     background-color: aliceblue;
     box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.322);
@@ -55,7 +54,7 @@ li{
 
 
  .btn{
-    margin-inline:2px;
+    margin-inline:3px;
  font-size: 1rem;
     font-weight: bold;
     border-radius: 10px;
@@ -111,4 +110,45 @@ transform: scale(1.03);
 .done{
     text-decoration: line-through;
     color:rgba(56, 57, 57, 0.867)
+}
+
+@media (max-width: 720px) {
+
+    .container-wrapper {
+        margin-top: 1rem;
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .header {
+        font-size: 1.2rem;
+    }
+
+    .content-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .content-header .inputTodo {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .btn {
+        
+        font-size: 0.9rem;
+        padding: 7px;
+    }
+    .content .doneBtn{
+        margin-left: 15px;
+    }
+
+    li {
+        font-size: 1rem;
+    }
 }
