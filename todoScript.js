@@ -64,6 +64,11 @@ const addTodo=()=>
     inputField.value="";
 }
 addBtn.addEventListener("click",addTodo);
+inputField.addEventListener("keydown",(event)=>{
+    if(event.key==="Enter"){
+        addTodo();
+    }
+});
 
 
 let todos = loadTodos();
