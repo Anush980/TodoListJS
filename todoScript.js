@@ -1,6 +1,9 @@
 const todolist = document.querySelector("#todos");
 const addBtn = document.querySelector("#addBtn");
 const inputField = document.querySelector("#inputTodo");
+const rickrollBtn = document.querySelector("#rickrollBtn");
+const resetBtn = document.querySelector("#resetBtn");
+const rickAudio = document.querySelector("#rickAudio");
 
 const saveTodos =(todos)=>{
     localStorage.setItem("todos",JSON.stringify(todos))
@@ -15,6 +18,18 @@ const loadTodos = ()=>{
        return [];
     }
 }
+
+const rickrollLyrics = [
+    "Never gonna give you up",
+    "Never gonna let you down",
+    "Never gonna run around",
+    " and desert you",
+    "Never gonna make you cry",
+    "Never gonna say goodbye",
+    "Never gonna tell a lie and hurt you",
+
+];
+
 
 const renderTodos =()=>{
 
@@ -51,6 +66,23 @@ const renderTodos =()=>{
     });
 };
 
+const rickrollAdd=()=>{
+    rickrollLyrics.forEach(lyrics=>{
+        todos.push({text:lyrics,done:false})
+    });
+    rickAudio.play();
+    saveTodos(todos);
+    renderTodos();
+}
+
+const resetAll=()=>{
+    todos=[];
+    rickAudio.pause();
+    rickAudio.currentTime=0;
+    saveTodos(todos);
+    renderTodos();
+}
+
 const addTodo=()=>
 {
     const data= inputField.value.trim();
@@ -63,12 +95,17 @@ const addTodo=()=>
     renderTodos();
     inputField.value="";
 }
+
+rickrollBtn.addEventListener("click",rickrollAdd);
 addBtn.addEventListener("click",addTodo);
+resetBtn.addEventListener("click",resetAll);
+
 inputField.addEventListener("keydown",(event)=>{
     if(event.key==="Enter"){
         addTodo();
     }
 });
+
 
 
 let todos = loadTodos();
